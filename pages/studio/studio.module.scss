@@ -1,0 +1,114 @@
+@import '../../styles/abstract/colors';
+
+$distance: 5rem;
+$projectBorderRadius: 0.5rem;
+$heightOfNav: 4rem;
+$inputFieldDistance: 2rem;
+
+
+.main{
+  animation: show 0.3s ease-out;
+  padding: $distance 0 0;
+
+  h1{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .lontaImage, .rawStudioLogo{
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .rawStudioLogo{
+    margin-bottom: 0rem;
+  }
+
+  .about{
+    .description{
+      p{
+        font-family: 'gilroyregular', Helvetica, sans-serif;
+        padding: 0 1.25rem;
+        font-size: 0.85rem;
+        line-height: 1.5rem;
+      }
+      //margin-bottom: 2rem;
+    }
+    .flex{
+      margin-bottom: 8rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .main{
+    padding-top: $distance * 2 + 1rem;
+    h1{
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      margin-top: 0;
+    }
+
+    .lontaImage, .rawStudioLogo{
+      width: 80%;
+      margin: auto auto 4rem;
+    }
+
+    .rawStudioLogo{
+      width: 30rem;
+    }
+
+    .lonta{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about{
+      display: grid;
+      justify-content: center;
+    }
+
+    .about{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 4rem 30rem;
+      width: 90%;
+      max-width: 1140px;
+      margin: auto;
+      h1{
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      .description{
+        p:first-child{
+          margin-bottom: 2rem;
+        }
+        p{
+          font-family: 'gilroyregular', Helvetica, sans-serif;
+          padding: 0;
+          margin: 0;
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+        //margin-bottom: 2rem;
+      }
+      .flex{
+        margin-bottom: 8rem;
+      }
+      .justifyContentCenter{
+        justify-content: start;
+      }
+      .rawStudioLogo{
+        grid-column: 1/ span 1;
+        grid-row: 1/ span 2;
+      }
+      h1{
+        grid-column: 2/ span 1;
+        text-align: start;
+      }
+    }
+  }
+}

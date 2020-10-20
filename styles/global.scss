@@ -1,0 +1,72 @@
+//@import './abstract/fonts';
+@import './abstract/colors';
+@import './abstract/abstract';
+@import './abstract/buttons';
+@import './abstract/animation';
+@import './header/header';
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'gilroymedium', Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  background-color: #212121;
+  color: white;
+  z-index: 1;
+}
+.container {
+  background-color: #212121;
+  height: 100%;
+}
+
+h1 {
+  font-family: 'gilroyregular', Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'gilroyregular', Helvetica, sans-serif;
+  font-size: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.blur {
+  /* Add the blur effect */
+  filter: blur(8px);
+  //-webkit-filter: blur(8px);
+
+  /* Full height */
+  left: -8px;
+  top: -8px;
+  bottom: -8px;
+  right: -8px;
+  position: fixed;
+}
+
+@media only screen and(min-width: 1024px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.cls-1 {
+  fill: #ffffff;
+}

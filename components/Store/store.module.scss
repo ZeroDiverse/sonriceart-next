@@ -1,0 +1,19 @@
+@import '../../styles/abstract/colors';
+
+.showMore{
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  a{
+    color: getColor(blue);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .showMore {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+}

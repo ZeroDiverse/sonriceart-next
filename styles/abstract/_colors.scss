@@ -1,0 +1,14 @@
+$color:(
+    black: #000000,
+    contactBg: #181818,
+    nav: #212121,
+    layer: #464646,
+    blue: #3ab0ff,
+    lightgreen: #8bf27d
+
+);
+
+@function getColor($in){
+    @return map-get($map: $color, $key: $in)
+}
+

@@ -1,0 +1,69 @@
+@import '../../styles/abstract/animation';
+
+.main {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: show 0.3s ease-out;
+  h1 {
+    font-size: 4rem;
+    margin: 0rem auto;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  hr {
+    width: 14rem;
+    //width: 28rem;
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #ffffff;
+    /* old IE */
+    background-color: #ffffff;
+    /* Modern Browsers */
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    h1 {
+      font-size: 6rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    hr {
+      width: 28rem;
+      border: none;
+      height: 1px;
+      /* Set the hr color */
+      color: #ffffff;
+      /* old IE */
+      background-color: #ffffff;
+      /* Modern Browsers */
+    }
+  }
+}

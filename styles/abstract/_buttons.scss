@@ -1,0 +1,60 @@
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+%btn {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 8px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+  //word-spacing: 4px;
+  //width: 150px;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+
+.btn-primary {
+  @extend %btn;
+  background-color: #0289f2;
+  color: white;
+  font-size: 0.85rem;
+  opacity: 0;
+  animation: show 0.6s ease-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+
+  a {
+    color: white;
+  }
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0062cc !important;
+  border-color: #0062cc;
+  transition: all 333ms ease-out;
+}
+
+
+.btn-primary:focus {
+  outline: 0;
+}
+
+
+@media(min-width: 768px) {
+  %btn {
+    //width: 100px;
+    font-size: 1rem;
+    text-align: center;
+  }
+}

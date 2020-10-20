@@ -1,0 +1,395 @@
+header {
+  background-color: rgba($color: #000000, $alpha: 0.85);
+  position: fixed;
+  width: 100%;
+  z-index: 2000;
+  animation: show 0.6s ease-out;
+
+  a {
+    &:active {
+      color: #c9c9c9 !important;
+    }
+  }
+
+  #artwork {
+    &:active {
+      color: #0069d9 !important;
+    }
+  }
+
+  #navbar {
+    position: relative;
+    width: 94%;
+    margin: auto;
+    max-width: 1940px;
+    height: 4rem;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbrand {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 60px;
+      height: 60px;
+      fill: #ffffff;
+    }
+
+    .collapse {
+      display: block;
+      cursor: pointer;
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      display: none;
+
+    }
+
+    #sidenav {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: auto;
+      width: 0;
+      height: 100%;
+      z-index: 10;
+      transition: 0.2s ease-out;
+      background-color: rgba($color: #000000, $alpha: 0.85);
+
+      #sidenav-nav {
+        padding: 0 2rem;
+        display: none;
+        list-style: none;
+
+        .flex {
+          margin: 0.75rem 0;
+        }
+
+        .links_straight {
+          display: flex;
+
+          li {
+            margin-right: 2rem;
+
+            svg {
+              &:hover path {
+                transition: all 0.3s ease-out;
+                fill: #c9c9c9 !important;
+              }
+            }
+          }
+        }
+
+        .btn-cls {
+          font-size: 2rem;
+          padding: 0;
+          margin: 0;
+          text-align: end;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          cursor: pointer;
+        }
+
+        .btn-cls:hover {
+          color: white;
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+          flex-grow: 0;
+          flex-shrink: 0;
+        }
+
+        .nav-item {
+          border-top: 1px solid white;
+
+          svg {
+            transform: rotate(90deg);
+          }
+
+          >a {
+            font-family: 'gilroyregular', Helvetica, sans-serif;
+          }
+
+          .sub-nav-item {
+            ul {
+              margin-left: 0;
+              padding-left: 0;
+              //display: none;
+              //visibility: hidden;
+              max-height: 0;
+              overflow: hidden;
+              transition: all ease-out 0.5s;
+
+              li {
+                margin: 0.75rem 0;
+                display: inline-block;
+                margin-right: 40%;
+
+                a {
+                  font-size: 0.85rem;
+                  clear: both;
+                  opacity: 1;
+                  transition: all 0.5s ease-out;
+                }
+
+              }
+            }
+          }
+
+          &:hover>a {
+            cursor: pointer;
+          }
+
+          a {
+            &::after {
+              content: '';
+              display: block;
+              width: 0;
+              height: 1px;
+              background: #ffffff;
+              transition: width .3s ease-out;
+            }
+
+            &:hover::after {
+              width: 100%;
+              //transition: width .3s;
+            }
+          }
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+
+        .nav-item,
+        .links_straight {
+          border-top: 1px solid #212121;
+          padding: 1rem 0;
+        }
+
+        .current {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 375px) {
+  header {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header #navbar #sidenav #sidenav-nav .nav-item .sub-nav-item ul li {
+    margin-right: 60%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header #navbar #sidenav #sidenav-nav .nav-item:hover {
+    .sub-nav-item {
+      ul {
+        max-height: 12rem;
+      }
+    }
+  }
+
+  header {
+    #special {
+      margin-right: 4.5rem;
+    }
+
+    #navbar {
+      .links_straight {
+        display: flex;
+
+        li {
+          margin-right: 3rem !important;
+        }
+      }
+
+      .collapse {
+        display: none !important;
+      }
+
+      .links_straight li {
+        margin-right: 0 !important;
+      }
+
+      #sidenav {
+        position: static;
+        width: initial !important;
+        margin: auto 0;
+        display: block;
+        width: initial;
+        background-color: transparent;
+
+        #sidenav-nav {
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          margin: 0 auto;
+
+          .nav-item,
+          .links_straight {
+            padding: 1.24rem 0;
+          }
+
+          .nav-item {
+            position: relative;
+            margin: 0 1.5rem;
+
+            svg {
+              display: none;
+            }
+
+            .sub-nav-item:first-child {
+              width: 10rem !important;
+            }
+
+            .sub-nav-item {
+              position: absolute;
+              top: 4.5rem;
+              left: -0.5rem;
+              background-color: rgba($color: #000000, $alpha: 0.4);
+              border-radius: 1.25rem;
+              text-align: start;
+              padding: 0 1rem;
+              width: 10rem;
+              box-sizing: initial;
+
+              ul {
+                transition: all ease-out 0.2s;
+
+                li {
+                  margin: 1rem 0;
+                  display: inline-block;
+                  word-break: break-all;
+
+                  /* wrap extended text*/
+                  a {
+                    font-size: 1rem;
+                    font-family: 'gilroylight', Helvetica, sans-serif;
+                  }
+                }
+              }
+            }
+
+            .sub-nav-item a:hover+ul {
+              display: block;
+              visibility: visible;
+            }
+          }
+
+          .btn-cls {
+            display: none !important;
+          }
+
+          li {
+            margin: 0 1rem;
+          }
+        }
+      }
+
+      .navbrand {
+        position: static;
+      }
+    }
+  }
+}
+
+#artworks {
+  color: getColor(blue) !important;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: getColor(blue);
+    transition: width .3s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+    //transition: width .3s;
+  }
+}
+
+#artworks.current {
+
+  //border-bottom: 1px solid getColor(blue) !important;
+  &::after {
+    content: '';
+    display: block;
+    width: 100% !important;
+    height: 1px;
+    background: getColor(blue);
+    transition: width .3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+    //transition: width .3s;
+  }
+}
+
+header #navbar #sidenav #sidenav-nav .nav-item .current {
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #ffffff;
+    transition: width .3s;
+  }
+}
+
+header #navbar #sidenav #sidenav-nav .nav-item #artworks:hover {
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: getColor(blue) !important;
+    transition: width .3s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+    //transition: width .3s;
+  }
+}
+
+header #navbar #sidenav #sidenav-nav .nav-item #artworks::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: getColor(blue);
+  transition: width .3s ease-out;
+}
+
+header #navbar .sidenav-85 {
+  width: 85% !important;
+
+  ul {
+    display: block !important;
+  }
+}

@@ -1,0 +1,36 @@
+.container {
+  //width: 98%;
+  //max-width: 1800px;
+  margin: auto;
+  //height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.display-none {
+  display: none;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .flex-lg {
+    display: flex;
+  }
+
+  .row-reverse-lg {
+    flex-direction: row-reverse;
+  }
+}

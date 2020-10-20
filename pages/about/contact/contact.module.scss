@@ -1,0 +1,214 @@
+@import '../../../styles/abstract/animation';
+@import '../../../styles/abstract/colors';
+
+
+$distance: 5rem;
+$heightOfNav: 4rem;
+$inputFieldDistance: 2rem;
+
+.main {
+  animation: show 0.3s ease-out;
+  padding: $distance 2rem;
+
+  .thanks {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 0.85rem;
+    margin: 1rem 0;
+  }
+
+  label {
+    display: block;
+    font-size: 0.85rem;
+  }
+
+  .inputField {
+    margin-bottom: $inputFieldDistance;
+  }
+
+  input[type='text'] {
+    height: 2.25rem;
+    font-family: 'gilroymedium', sans-serif;
+
+    &::placeholder {
+      font-family: 'gilroymedium', sans-serif;
+    }
+  }
+
+  textarea {
+    font-family: 'gilroymedium', sans-serif;
+  }
+
+  input[type='text'],
+  textarea {
+    display: block;
+    margin: 0.5rem 0 1rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: 0;
+    font-family: 'gilroymedium', sans-serif;
+
+    &::placeholder {
+      font-family: 'gilroymedium', sans-serif;
+    }
+  }
+
+  form {
+    margin-bottom: 4rem;
+  }
+
+  .btnPrimary {
+    margin-top: 0;
+    font-size: 0.75rem;
+    animation: show 0.6s ease-out;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+  }
+
+  .intro {
+    margin-bottom: $distance - 3rem;
+  }
+
+  .flashMessage {
+    background-color: rgba($color: #000000, $alpha: 0.85);
+    padding: 1rem 1rem 1rem 3rem;
+    position: fixed;
+    left: 0;
+    top: 5.5rem;
+    border-radius: 0 1.25rem 1.25rem 0;
+    //display: none;
+    animation: disapear 1.2s ease-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    .success {
+      color: getColor(lightgreen);
+      font-size: 0.85rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    .thanks {
+      font-size: 1.5rem;
+    }
+
+    .flashMessage {
+      top: 6.5rem;
+      .success {
+        color: getColor(lightgreen);
+        font-size: 1rem;
+        padding-right: 3rem;
+      }
+    }
+
+    .contactMain {
+      max-width: 1140px;
+      width: 90%;
+      margin: $distance auto auto;
+      padding: 0 5%;
+
+      .inputField {
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .nameField {
+        display: flex;
+
+        input {
+          margin-right: 2rem;
+          font-family: 'gilroymedium', sans-serif;
+          border-radius: 0.5rem;
+
+          &::placeholder {
+            font-family: 'gilroymedium', sans-serif;
+          }
+        }
+      }
+
+      .phoneAndEmail {
+        display: flex;
+
+        input {
+          //width: 100%;
+          margin-right: 2rem;
+          border-radius: 0.5rem;
+        }
+      }
+
+      .subjectField {
+        display: flex;
+        border-radius: 0.5rem;
+      }
+
+      label {
+        padding-left: 8px;
+      }
+
+      input,
+      textarea {
+        border-radius: 0.5rem;
+        font-family: 'gilroymedium', sans-serif;
+        font-weight: normal;
+      }
+
+      input[type='text'] {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        width: 26rem;
+        font-family: 'gilroymedium', sans-serif;
+        border-radius: 0.5rem;
+      }
+
+      .phone {
+        width: 15rem !important;
+      }
+
+      .message {
+        width: 54rem;
+        margin-bottom: 0;
+      }
+
+      .btnPrimary {
+        margin-top: 0.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    height: 100%;
+
+    .btnPrimary {
+      margin-top: 0.75rem;
+    }
+  }
+}
