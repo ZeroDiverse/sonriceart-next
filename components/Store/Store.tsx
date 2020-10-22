@@ -4,9 +4,9 @@ import style from '../Artwork/artwork.module.scss'
 import style1 from './store.module.scss'
 
 interface StoreProps {
-    title: String,
+    title: string,
     isGlobalStore: boolean
-    link: String
+    link: string
 }
 
 export default function Store(props: StoreProps) {

@@ -12,7 +12,6 @@ interface MainLayoutProps {
 
 const Navbar: React.FC<MainLayoutProps> = (props: MainLayoutProps) => {
     const router = useRouter()
-
     const navStyleWhenMenuOpen = {
         backgroundColor: props.menuOpen ? "transparent" : "rgba(0,0,0)"
     }
@@ -42,7 +41,7 @@ const Navbar: React.FC<MainLayoutProps> = (props: MainLayoutProps) => {
                         </svg>
                     </div>
                     <Link href="/">
-                        <a aria-label="home" style={navBrandStyleWhenMenuOpen}>
+                        <a aria-label="home" id="home" style={navBrandStyleWhenMenuOpen}>
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" className="navbrand"
                                 xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 524.4 510.2"
                                 width="60px" height="60px" xmlSpace="preserve">

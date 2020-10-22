@@ -1,32 +1,55 @@
-import React from 'react'
+import React, { Key, useEffect, useState } from 'react'
 import style from './artwork.module.scss'
-import Footer from "../../components/Footer/Footer";
+import axiosInstance from '../../axios';
 
 interface ArtworkProps {
-    title: String,
-    menuOpen: boolean
-    toggleMenu(): void
-    closeMenu(): void
+    title: string
+}
+
+interface IArtwork {
+    _id: string
+    title: string
+    coverImage: string
+    album: string
+    nameInCloud: string
+    detail: string
+    order: number
 }
 
 export default function Artwork(props: ArtworkProps) {
+
+    const [artworks, setArtWorks] = useState<IArtwork[]>([])
+
+    useEffect(() => {
+        axiosInstance.get('/api/artworks')
+            .then((data) => {
+                setArtWorks(data.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
+
     return (
         <>
-            <main className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
-                <h1>{props.title}</h1>
-                <div className={style.contentMain}>
-                    <div className={style.gridItems}>
-                        <div className={style.gridItem}>
-                            <div className="backgroundLayer" />
-                            <img src="/images/2.webp" alt="project bg" />
-                            <div className={style.description}>
-                                <p>Test</p>
-                            </div>
-                        </div>
-                    </div>
+            <h1>{props.title}</h1>
+            <div className={style.contentMain}>
+                <div className={style.gridItems}>
+                    {artworks.map((artwork) => {
+                        if (artwork.album === props.title) {
+                            return (
+                                <div className={style.gridItem} key={artwork._id as Key}>
+                                    <div className={style.backgroundLayer} />
+                                    <img src={artwork.coverImage} alt="project bg" />
+                                    <div className={style.description}>
+                                        <p>{artwork.title}</p>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
                 </div>
-            </main>
-            <Footer />
+            </div>
         </>
     )
 }

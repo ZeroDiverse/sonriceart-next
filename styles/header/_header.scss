@@ -1,3 +1,14 @@
+header #navbar #sidenav #sidenav-nav .nav-item:hover {
+  svg {
+    transform: rotate(-90deg);
+  }
+  .sub-nav-item {
+    ul {
+      max-height: 12rem;
+    }
+  }
+}
+
 header {
   background-color: rgba($color: #000000, $alpha: 0.85);
   position: fixed;
@@ -51,7 +62,6 @@ header {
 
     .navbar-nav {
       display: none;
-
     }
 
     #sidenav {
@@ -116,9 +126,10 @@ header {
 
           svg {
             transform: rotate(90deg);
+            transition: all 0.3s ease-out;
           }
 
-          >a {
+          > a {
             font-family: 'gilroyregular', Helvetica, sans-serif;
           }
 
@@ -143,12 +154,11 @@ header {
                   opacity: 1;
                   transition: all 0.5s ease-out;
                 }
-
               }
             }
           }
 
-          &:hover>a {
+          &:hover > a {
             cursor: pointer;
           }
 
@@ -159,7 +169,7 @@ header {
               width: 0;
               height: 1px;
               background: #ffffff;
-              transition: width .3s ease-out;
+              transition: width 0.3s ease-out;
             }
 
             &:hover::after {
@@ -201,6 +211,12 @@ header {
 }
 
 @media only screen and (min-width: 1024px) {
+  header {
+    background-color: rgba($color: #000000, $alpha: 0.85) !important;
+    #home {
+      display: block !important;
+    }
+  }
   header #navbar #sidenav #sidenav-nav .nav-item:hover {
     .sub-nav-item {
       ul {
@@ -291,7 +307,7 @@ header {
               }
             }
 
-            .sub-nav-item a:hover+ul {
+            .sub-nav-item a:hover + ul {
               display: block;
               visibility: visible;
             }
@@ -323,7 +339,7 @@ header {
     width: 0;
     height: 2px;
     background: getColor(blue);
-    transition: width .3s ease-out;
+    transition: width 0.3s ease-out;
   }
 
   &:hover::after {
@@ -333,7 +349,6 @@ header {
 }
 
 #artworks.current {
-
   //border-bottom: 1px solid getColor(blue) !important;
   &::after {
     content: '';
@@ -341,7 +356,7 @@ header {
     width: 100% !important;
     height: 1px;
     background: getColor(blue);
-    transition: width .3s;
+    transition: width 0.3s;
   }
 
   &:hover::after {
@@ -357,7 +372,7 @@ header #navbar #sidenav #sidenav-nav .nav-item .current {
     width: 100%;
     height: 1px;
     background: #ffffff;
-    transition: width .3s;
+    transition: width 0.3s;
   }
 }
 
@@ -368,7 +383,7 @@ header #navbar #sidenav #sidenav-nav .nav-item #artworks:hover {
     width: 0;
     height: 1px;
     background: getColor(blue) !important;
-    transition: width .3s ease-out;
+    transition: width 0.3s ease-out;
   }
 
   &:hover::after {
@@ -383,7 +398,7 @@ header #navbar #sidenav #sidenav-nav .nav-item #artworks::after {
   width: 0;
   height: 1px;
   background: getColor(blue);
-  transition: width .3s ease-out;
+  transition: width 0.3s ease-out;
 }
 
 header #navbar .sidenav-85 {

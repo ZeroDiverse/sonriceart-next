@@ -1,5 +1,7 @@
 import React from 'react'
 import Artwork from '../../../components/Artwork/Artwork'
+import Footer from '../../../components/Footer/Footer'
+import style from '../../../components/Artwork/artwork.module.scss'
 
 interface ArtworkProps {
     menuOpen: boolean
@@ -11,7 +13,11 @@ interface ArtworkProps {
 
 export default function Illustration(props: ArtworkProps) {
     return (
-        <Artwork title="Illustration - Concept" menuOpen={props.menuOpen} toggleMenu={props.toggleMenu}
-                 closeMenu={props.closeMenu}/>
+        <>
+            <main className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
+                <Artwork title="Illustration - Concept" />
+            </main>
+            <Footer />
+        </>
     )
 }

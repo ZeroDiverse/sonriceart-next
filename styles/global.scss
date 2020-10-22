@@ -70,3 +70,10 @@ ul {
 .cls-1 {
   fill: #ffffff;
 }
+
+@media screen and (min-width: 1024px) {
+  .blur {
+    /* Add the blur effect */
+    filter: none;
+  }
+}

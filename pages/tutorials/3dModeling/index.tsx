@@ -20,11 +20,13 @@ export default function Index(props: IndexProps) {
     }
 
     return (
-        <div className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
-            <Tutorial title="3D Modeling" link="3dModeling" isGlobalStore={false} togglePopup={togglePopup} />
-            <Popup isOpen={isPopupOpen} togglePopup={togglePopup} />
+        <>
+            <div className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
+                <Tutorial title="3D Modeling" link="3dModeling" isGlobalStore={false} togglePopup={togglePopup} />
+                <Popup isOpen={isPopupOpen} togglePopup={togglePopup} />
+            </div>
             <Footer />
-        </div>
+        </>
     )
 }
 

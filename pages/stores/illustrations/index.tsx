@@ -13,9 +13,11 @@ interface IndexProps {
 
 export default function Index(props: IndexProps) {
     return (
-        <div className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
-            <Store title="Illustrations" link="3dIllustrations" isGlobalStore={false} />
+        <>
+            <div className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
+                <Store title="Illustrations" link="3dIllustrations" isGlobalStore={false} />
+            </div>
             <Footer />
-        </div>
+        </>
     )
 }

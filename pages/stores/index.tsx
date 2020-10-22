@@ -13,11 +13,13 @@ interface StoreProps {
 
 export default function Index(props: StoreProps) {
     return (
-        <div className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
-            <Store title="Illustrations" link="illustrations" isGlobalStore={true} />
-            <Store title="3D Models" link="3dModels" isGlobalStore={true} />
-            <Store title="3D Materials" link="3dMaterials" isGlobalStore={true} />
+        <>
+            <div className={props.menuOpen ? `${style.main} blur` : `${style.main}`} onClick={props.closeMenu}>
+                <Store title="Illustrations" link="illustrations" isGlobalStore={true} />
+                <Store title="3D Models" link="3dModels" isGlobalStore={true} />
+                <Store title="3D Materials" link="3dMaterials" isGlobalStore={true} />
+            </div>
             <Footer />
-        </div>
+        </>
     )
 }
